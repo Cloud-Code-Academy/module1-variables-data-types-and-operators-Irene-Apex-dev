@@ -67,7 +67,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer multiplication(Integer a, Integer b) {
 
-        if (a == null || a == 0 || b == null || b == 0) {
+        if (a == null || b == null) {
             return null;
         }
 
@@ -85,7 +85,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Double division(Double a, Double b) {
 
-        if (a == null || a == 0 || b == null || b == 0) {
+        if (a == null || b == null || b == 0) {
             return 0;
         }
 
@@ -168,7 +168,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        return Date.today() < dt; 
+        return Date.today() <= dt; 
     }
 
     /**
@@ -206,7 +206,7 @@ public with sharing class VariablesDataTypesOperators {
         
         Double sumOfNumbers = a + b + c;
 
-        if (a == null || b == null || c == null || sumOfNumbers == 0) {
+        if (a == null || b == null || c == null) {
             return 0;
         }
 
@@ -330,7 +330,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate, Double numberOfHours) {
         
-        if (hourlyRate == null || hourlyRate == 0 || numberOfHours == null || numberOfHours == 0) {
+        if (hourlyRate == null || numberOfHours == null) {
             return 0;
         } 
 
@@ -349,7 +349,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
 
-        if (hourlyRate == null || hourlyRate == 0 || numberOfHours == null || numberOfHours == 0) {
+        if (hourlyRate == null || numberOfHours == null) {
             return 0.0;
         } 
 
