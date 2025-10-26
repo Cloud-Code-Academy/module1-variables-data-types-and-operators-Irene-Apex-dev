@@ -22,6 +22,9 @@
  */
 
 public with sharing class VariablesDataTypesOperators {
+
+    private static final Integer MILLISECONDS_PER_MINUTE = 60000;
+
     /**
      * Question 1
      * Performs addition of two numbers.
@@ -115,7 +118,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return true if the number is positive, false otherwise.
      */
     public static Boolean isPositive(Integer num) {
-        return num >= 1;
+
+        return num > 0;
     }
 
     /**
@@ -127,7 +131,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return The concatenated string.
      */
     public static String concatenateStrings(String str1, String str2) {
-        return str1 + str2; 
+        
+        return str1 + str2;
     }
 
 	/**
@@ -142,7 +147,8 @@ public with sharing class VariablesDataTypesOperators {
 	 * @return The complete sentence as a single String.
 	 */
 	public static String createSentence(String noun, String verb, String endingPunctuation) {
-		return 'The ' + noun + ' is ' + verb + endingPunctuation; 
+		
+        return 'The ' + noun + ' is ' + verb + endingPunctuation;
 	}
 
     /**
@@ -155,7 +161,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is in the past, False otherwise.
      */
     public static Boolean isDateInPast(Date dt) {
-        return Date.today() > dt; // Replace null with the variable you used to store the result
+        
+        return Date.today() > dt;
     }
 
     /**
@@ -168,7 +175,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        return Date.today() <= dt; 
+        
+        return Date.today() <= dt;
     }
 
     /**
@@ -185,10 +193,10 @@ public with sharing class VariablesDataTypesOperators {
 
         if (minutes == null) {
             return null;
-        }
-        Integer MILLISECONDS_PER_MINUTE = 60000; 
+        } 
 
         Integer milliseconds = minutes * MILLISECONDS_PER_MINUTE;
+
         return milliseconds; 
     }    
 
@@ -203,14 +211,14 @@ public with sharing class VariablesDataTypesOperators {
      * @return The average of the three numbers.
      */
     public static Double averageOfThreeNumbers(Integer a, Integer b, Integer c) {
-        
-        Double sumOfNumbers = a + b + c;
 
         if (a == null || b == null || c == null) {
-            return 0;
+            return null;
         }
 
-        return sumOfNumbers / 3; // Replace null with the variable you used to store the result
+        Double sumOfNumbers = a + b + c;
+
+        return sumOfNumbers / 3; 
     }
 
     /**
@@ -246,6 +254,7 @@ public with sharing class VariablesDataTypesOperators {
         // The result of the expression as it is right now is 43. 
         // You should add parentheses so that the result of the expression becomes 8.
         Integer answer = 48 - (15 + 5) * 2;
+
         return answer; 
     }
 
@@ -307,7 +316,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer performDivisionAndCast(Double a, Double b) {
 
-        if (a == null || a == 0 || b == null || b == 0) {
+        if (a == null || b == null || b == 0) {
             return null;
         }
 
@@ -316,7 +325,8 @@ public with sharing class VariablesDataTypesOperators {
 
         // Write the code for type casting the divisionResult to an Integer
         Integer roundedResult = (Integer) divisionResult;
-        return roundedResult; 
+        
+        return roundedResult;
     }
 
     /**
@@ -332,7 +342,7 @@ public with sharing class VariablesDataTypesOperators {
         
         if (hourlyRate == null || numberOfHours == null) {
             return 0;
-        } 
+        }
 
         return hourlyRate * (decimal) numberOfHours;
     }
@@ -350,8 +360,8 @@ public with sharing class VariablesDataTypesOperators {
     public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
 
         if (hourlyRate == null || numberOfHours == null) {
-            return 0.0;
-        } 
+            return 0;
+        }
 
         return hourlyRate * numberOfHours * 4;
     }
